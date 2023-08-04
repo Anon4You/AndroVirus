@@ -146,7 +146,7 @@ elif [ $av = 0 ] ; then
 else
     echo Andha hai kya loude...!
     sleep 2
-    androvirus
+    av
 fi
 
  
