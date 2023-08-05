@@ -28,7 +28,7 @@ else
     printf "Installing requirements it may take some time\n"
     cd 
     curl -LO https://github.com/Anon4You/AndroVirus/raw/main/lib/av.tar.gz
-    curl -Lo https://github.com/Anon4You/AndroVirus/raw/main/lib/av
+    curl -LO https://github.com/Anon4You/AndroVirus/raw/main/lib/av
     mv av $PATH ; chmod 777 $PATH/av
     if hash ! php > /dev/null 2>&1 ; then
         printf "installing php..."
@@ -39,7 +39,7 @@ else
         apt install -y cloudflared
     fi
     tar -zxf av.tar.gz > /dev/null 2>&1
-    rm av.tar.gz
+    rm av.tar.gz > /dev/null 2>&1 
 fi
 echo -e "\e[0m
 Author:Anon4You[Alienkrishn]
