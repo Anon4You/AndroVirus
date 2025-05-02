@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Handler Anonymous - Anonymous SMS Sender</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --primary-hover: #2980b9;
+            --secondary-color: #f8f9fa;
+            --text-color: #2c3e50;
+            --light-text: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: white;
+            padding: 0;
+            margin: 0;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #2c3e50);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .app-icon {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            margin: -80px auto 1.5rem;
+            background-color: white;
+            position: relative;
+        }
+        
+        .app-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .app-version {
+            color: var(--light-text);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+        
+        .app-description {
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+            text-align: left;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .app-description h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.2rem;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        
+        .app-description p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        
+        .highlight {
+            background-color: rgba(52, 152, 219, 0.1);
+            padding: 1rem;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 4px;
+            margin: 1.5rem 0;
+        }
+        
+        .btn {
+            background-color: var(--primary-color);
+            border: none;
+            color: white;
+            padding: 14px 36px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1.5rem 0;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        .btn i {
+            margin-right: 10px;
+            font-size: 1.1em;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature {
+            flex: 1 1 250px;
+            background: white;
+            padding: 1.8rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.2rem;
+        }
+        
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-color);
+        }
+        
+        .feature p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-size: 0.95rem;
+        }
+        
+        .disclaimer {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 0.85rem;
+            color: #bdc3c7;
+            padding-top: 1rem;
+            border-top: 1px solid #34495e;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 1rem;
+            }
+            
+            header h2 {
+                font-size: 1.7rem;
+            }
+            
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .app-icon {
+                width: 140px;
+                height: 140px;
+                margin: -70px auto 1.2rem;
+            }
+            
+            .features {
+                gap: 1.5rem;
+            }
+            
+            .feature {
+                flex: 1 1 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .btn {
+                padding: 12px 28px;
+                font-size: 1.1rem;
+                width: 100%;
+            }
+            
+            .app-description {
+                padding: 1.5rem;
+            }
+            
+            .feature {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>SMS Handler Anonymous</h2>
+        <p>Send unlimited anonymous SMS completely free</p>
+    </header>
+    
+    <div class="container">
+        <img src="img.png" alt="App Icon" class="app-icon">
+        <div class="app-name">Agent.apk</div>
+        <div class="app-version">Latest Version</div>
+        
+        <div class="app-description">
+            <h2>About This App</h2>
+            <p>SMS Handler Anonymous is a powerful tool for sending SMS messages without revealing your identity. Our app provides complete anonymity with no registration required and no credit system.</p>
+            
+            <div class="highlight">
+                <p>This revolutionary app uses free SMS APIs to allow unlimited anonymous messaging. No login, no personal information collected, and completely free to use.</p>
+            </div>
+            
+            <p>Perfect for situations where you need to communicate privately without leaving traces. The intuitive interface makes anonymous messaging simple and accessible to everyone.</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <i class="fa fa-user-secret"></i>
+                <h3>Complete Anonymity</h3>
+                <p>No phone number or personal information required to send messages</p>
+            </div>
+            <div class="feature">
+                <i class="fa fa-paper-plane"></i>
+                <h3>Unlimited SMS</h3>
+                <p>Send as many messages as you need with our free API</p>
+            </div>
+            <div class="feature">
+                <i class="fa fa-lock"></i>
+                <h3>No Tracking</h3>
+                <p>Messages cannot be traced back to your device</p>
+            </div>
+        </div>
+        
+        <a href="Agent.apk" download="Agent" class="btn">
+            <i class="fa fa-download"></i> Download Now
+        </a>
+    </div>
+    
+    <footer>
+        <p>SMS Handler Anonymous - The ultimate tool for private communication</p>
+        <div class="disclaimer">
+            <p>This app is intended for legal use only. Please check your local laws regarding anonymous messaging.</p>
+        </div>
+    </footer>
+</body>
+</html>

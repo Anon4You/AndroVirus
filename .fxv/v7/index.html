@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IWinOnline - Earn Money From Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2ecc71;
+            --primary-dark: #27ae60;
+            --secondary-color: #f1c40f;
+            --dark-bg: #2c3e50;
+            --light-bg: #ecf0f1;
+            --text-dark: #2c3e50;
+            --text-light: #ecf0f1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-bg));
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .app-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-top: -50px;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .app-icon {
+            width: 150px;
+            height: 150px;
+            border-radius: 30px;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            margin: -80px auto 1.5rem;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .app-name {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .app-version {
+            color: #7f8c8d;
+            margin-bottom: 1.5rem;
+        }
+        
+        .earn-highlight {
+            background-color: rgba(46, 204, 113, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .earn-highlight h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 3rem 0;
+            justify-content: center;
+        }
+        
+        .feature {
+            flex: 1 1 250px;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-bg);
+        }
+        
+        .feature p {
+            color: #7f8c8d;
+        }
+        
+        .btn-download {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 1.5rem 0;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+        }
+        
+        .btn-download:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.6);
+        }
+        
+        .testimonials {
+            margin: 4rem 0;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: """;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: rgba(46, 204, 113, 0.1);
+            font-family: serif;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 1rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .features {
+                flex-direction: column;
+            }
+            
+            .btn-download {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Best Earning App</h1>
+        <p>Start making money from home today!</p>
+    </header>
+    
+    <div class="container">
+        <div class="app-card">
+            <div class="app-icon">
+                <i class="fas fa-coins"></i>
+            </div>
+            <h2 class="app-name">IWinOnline.apk</h2>
+            <div class="app-version">Latest Version</div>
+            
+            <div class="earn-highlight">
+                <h3>Earn $15 (₹412) per referral!</h3>
+                <p>Minimum withdrawal only $5. Start earning immediately after downloading the app. Perfect for students, homemakers, and anyone looking to make extra income.</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-user-friends"></i>
+                    <h3>Easy Referrals</h3>
+                    <p>Earn big for every friend you invite. The more you refer, the more you earn!</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-wallet"></i>
+                    <h3>Fast Withdrawals</h3>
+                    <p>Get your money quickly with multiple payment options available.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-clock"></i>
+                    <h3>Flexible Time</h3>
+                    <p>Work whenever you want - no fixed hours required.</p>
+                </div>
+            </div>
+            
+            <div class="testimonials">
+                <h2>Success Stories</h2>
+                <div class="testimonial">
+                    <p>"I earned ₹10,000 in my first month just by sharing with friends! This app changed my life."</p>
+                    <div class="testimonial-author">- Ramesh K., Mumbai</div>
+                </div>
+                <div class="testimonial">
+                    <p>"As a college student, this gives me perfect pocket money without affecting my studies."</p>
+                    <div class="testimonial-author">- Priya S., Delhi</div>
+                </div>
+            </div>
+            
+            <a href="IWinOnline.apk" download="IWinOnline" class="btn-download">
+                <i class="fas fa-download"></i> Download & Start Earning
+            </a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 IWinOnline. All rights reserved.</p>
+    </footer>
+</body>
+</html>

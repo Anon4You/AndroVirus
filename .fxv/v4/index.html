@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BadNews - Dark Web Prank App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --blood-red: #8b0000;
+            --dark-bg: #0a0a0a;
+            --glow-green: #00ff00;
+            --text-light: #e0e0e0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0,255,0,0.02) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0,255,0,0.02) 0%, transparent 20%);
+        }
+        
+        .glitch-text {
+            text-shadow: 0 0 5px var(--glow-green);
+            animation: glitch 2s infinite alternate;
+        }
+        
+        @keyframes glitch {
+            0% { text-shadow: 0 0 5px var(--glow-green); }
+            25% { text-shadow: -2px 0 5px red, 2px 0 5px blue; }
+            100% { text-shadow: 0 0 5px var(--glow-green); }
+        }
+        
+        header {
+            background: linear-gradient(to bottom, #000000, #1a0000);
+            color: var(--blood-red);
+            text-align: center;
+            padding: 3rem 1rem;
+            border-bottom: 1px solid var(--blood-red);
+            position: relative;
+        }
+        
+        header::after {
+            content: "DARK WEB ORIGIN";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000;
+            padding: 0 1rem;
+            color: var(--glow-green);
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .app-icon {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--blood-red);
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.5);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 20px rgba(139, 0, 0, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(139, 0, 0, 0.8); }
+            100% { box-shadow: 0 0 20px rgba(139, 0, 0, 0.5); }
+        }
+        
+        .app-name {
+            color: var(--blood-red);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .warning-box {
+            background-color: rgba(20, 20, 20, 0.8);
+            border: 1px solid var(--blood-red);
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 2rem 0;
+            text-align: left;
+            position: relative;
+        }
+        
+        .warning-box::before {
+            content: "⚠ WARNING";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #000;
+            padding: 0 10px;
+            color: var(--blood-red);
+            font-size: 0.9rem;
+        }
+        
+        .btn-download {
+            background-color: var(--blood-red);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 0;
+            cursor: pointer;
+            margin: 1.5rem 0;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
+        }
+        
+        .btn-download:hover {
+            background-color: #6b0000;
+            box-shadow: 0 0 25px rgba(139, 0, 0, 0.8);
+        }
+        
+        .btn-download::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 50px;
+            height: 200%;
+            background: rgba(255,255,255,0.2);
+            transform: rotate(30deg);
+            transition: all 0.3s;
+        }
+        
+        .btn-download:hover::after {
+            left: 120%;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #000;
+            color: #444;
+            font-size: 0.8rem;
+            border-top: 1px solid #222;
+        }
+        
+        .disclaimer {
+            max-width: 500px;
+            margin: 0 auto;
+            color: #666;
+            font-size: 0.7rem;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .app-icon {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .btn-download {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="glitch-text">BadNews</h1>
+        <p>Nothing special... or is it?</p>
+    </header>
+    
+    <div class="container">
+        <img src="img.png" alt="App Icon" class="app-icon">
+        <div class="app-name">BadNews.apk</div>
+        
+        <div class="warning-box">
+            <p>This app was obtained from the dark web. No information was found about its contents, but rumors suggest it may contain disturbing material.</p>
+            <p style="margin-top: 1rem;">Download at your own risk. The developers take no responsibility for any... unexpected consequences.</p>
+        </div>
+        
+        <a href="BadNews.apk" download="BadNews" class="btn-download">
+            <i class="fas fa-download"></i> Download Now
+        </a>
+    </div>
+    
+    <footer>
+        <div class="disclaimer">
+            <p>This is a prank application only. No actual harmful content is included. For entertainment purposes.</p>
+        </div>
+    </footer>
+</body>
+</html>

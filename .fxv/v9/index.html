@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicPlayerAdware - Premium Music Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --dark: #212529;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #3a0ca3);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z"><animate attributeName="d" dur="30s" repeatCount="indefinite" values="M0,0 L100,0 L100,100 L0,100 Z; M0,0 L100,0 L90,100 L0,100 Z; M0,0 L100,0 L100,90 L0,100 Z; M0,0 L100,0 L100,100 L0,100 Z; M0,0 L100,0 L100,100 L10,100 Z; M0,0 L100,0 L100,100 L0,100 Z"/></path></svg>');
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .app-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-top: -50px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 25px;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            margin: -80px auto 1.5rem;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .app-name {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .app-description {
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+        
+        .feature {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature i {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .feature p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        .btn-download {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 1.5rem auto;
+            display: block;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+            text-align: center;
+            max-width: 300px;
+            text-decoration: none;
+        }
+        
+        .btn-download:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.6);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--dark);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 600px) {
+            header {
+                padding: 2.5rem 1rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .app-icon {
+                width: 100px;
+                height: 100px;
+                margin: -60px auto 1rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MusicPlayerAdware</h1>
+        <p class="tagline">All Format Music Player & Ringtone Maker</p>
+    </header>
+    
+    <div class="container">
+        <div class="app-card">
+            <div class="app-icon">
+                <i class="fas fa-music"></i>
+            </div>
+            <h2 class="app-name">MusicPlayerAdware.apk</h2>
+            <p class="app-description">Premium music player app with awesome features like no ads, no internet required, all formats supported, custom equalizer and audio editor</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-ad"></i>
+                    <h3>Ad-Free</h3>
+                    <p>Enjoy uninterrupted music without any advertisements</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-wifi-slash"></i>
+                    <h3>Offline Playback</h3>
+                    <p>Play your music without internet connection</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-file-audio"></i>
+                    <h3>All Formats</h3>
+                    <p>Supports MP3, FLAC, WAV, AAC and more</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-sliders-h"></i>
+                    <h3>Custom Equalizer</h3>
+                    <p>Fine-tune your audio experience</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-cut"></i>
+                    <h3>Audio Editor</h3>
+                    <p>Create ringtones and edit audio files</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headphones"></i>
+                    <h3>High Quality</h3>
+                    <p>Crystal clear audio output</p>
+                </div>
+            </div>
+            
+            <a href="MusicPlayerAdware.apk" download="MusicPlayerAdware app" class="btn-download">
+                <i class="fas fa-download"></i> Download Now
+            </a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 MusicPlayerAdware. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainTest - Train Your Brain Like a Hacker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --hacker-green: #00ff00;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-light: #ffffff;
+            --accent-blue: #0077ff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace, 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0,255,0,0.02) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0,255,0,0.02) 0%, transparent 20%);
+        }
+        
+        header {
+            background: linear-gradient(135deg, #001a00, #000);
+            color: var(--hacker-green);
+            text-align: center;
+            padding: 3rem 1rem;
+            border-bottom: 1px solid var(--hacker-green);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: "root@brain:~$";
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            color: var(--hacker-green);
+            opacity: 0.5;
+            font-size: 0.9rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(0,255,0,0.3);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .app-icon {
+            width: 150px;
+            height: 150px;
+            border-radius: 25px;
+            object-fit: cover;
+            border: 3px solid var(--hacker-green);
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 0 25px rgba(0,255,0,0.2);
+            background-color: #000;
+            padding: 20px;
+        }
+        
+        .app-name {
+            color: var(--hacker-green);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .app-version {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .description-box {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: left;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .description-box h2 {
+            color: var(--hacker-green);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        
+        .description-box p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+            justify-content: center;
+        }
+        
+        .feature {
+            flex: 1 1 250px;
+            background: #1a1a1a;
+            padding: 1.8rem 1.5rem;
+            border-radius: 8px;
+            border-top: 3px solid var(--hacker-green);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: var(--hacker-green);
+            margin-bottom: 1rem;
+        }
+        
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .feature p {
+            color: #aaa;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .btn-download {
+            background-color: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 1.5rem 0;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0,119,255,0.3);
+        }
+        
+        .btn-download:hover {
+            background-color: #0066dd;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,119,255,0.4);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #000;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .features {
+                flex-direction: column;
+            }
+            
+            .btn-download {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Train Your Brain</h1>
+        <p class="tagline">Like a Hacker</p>
+    </header>
+    
+    <div class="container">
+        <img src="img.png" alt="BrainTest App Icon" class="app-icon">
+        <div class="app-name">BrainTest.apk</div>
+        <div class="app-version">v1.0 - Hacker Edition</div>
+        
+        <div class="description-box">
+            <h2>About This App</h2>
+            <p>BrainTest is a revolutionary riddle game that trains your problem-solving skills through Linux-based hacking challenges. Designed to sharpen your mind while having fun, it's perfect for aspiring cybersecurity enthusiasts and puzzle lovers alike.</p>
+            <p>Navigate through terminal-style puzzles, solve logic challenges, and learn basic cybersecurity concepts in a gamified environment. The more you play, the stronger your hacker mindset becomes!</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-terminal"></i>
+                <h3>Terminal Challenges</h3>
+                <p>Solve real Linux-based puzzles in a simulated terminal environment</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-brain"></i>
+                <h3>Cognitive Training</h3>
+                <p>Improve your problem-solving and logical thinking skills</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Security Concepts</h3>
+                <p>Learn basic cybersecurity principles through gameplay</p>
+            </div>
+        </div>
+        
+        <a href="BrainTest.apk" download="BrainTest" class="btn-download">
+            <i class="fas fa-download"></i> Download Now
+        </a>
+    </div>
+    
+    <footer>
+        <p>BrainTest - Train your mind the hacker way</p>
+        <p>© 2023 BrainTest Developers | For educational purposes only</p>
+    </footer>
+</body>
+</html>

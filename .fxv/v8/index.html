@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft 2 Mod - Premium Edition</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --mc-green: #5b9c64;
+            --mc-dark: #3a3a3a;
+            --mc-light: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                        url('https://minecraft-header-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            position: relative;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            color: var(--mc-green);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .mod-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .mod-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 4px solid var(--mc-green);
+            margin: -70px auto 1rem;
+            background-color: var(--mc-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--mc-green);
+            font-size: 2.5rem;
+        }
+        
+        .mod-name {
+            font-size: 1.8rem;
+            color: var(--mc-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .mod-version {
+            color: #777;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .mod-description {
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            text-align: left;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+        
+        .feature {
+            flex: 1 1 200px;
+            background: var(--mc-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--mc-green);
+        }
+        
+        .feature i {
+            color: var(--mc-green);
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .feature h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--mc-dark);
+        }
+        
+        .btn-download {
+            background-color: var(--mc-green);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 1.5rem 0;
+            font-weight: 600;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-download:hover {
+            background-color: #4a8a52;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--mc-dark);
+            color: #aaa;
+            font-size: 0.8rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            header {
+                padding: 2rem 1rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .features {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Minecraft 2 Mod</h1>
+        <p class="tagline">Premium Subscription Edition</p>
+    </header>
+    
+    <div class="container">
+        <div class="mod-card">
+            <div class="mod-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <h2 class="mod-name">Minecraft_2_mod.apk</h2>
+            <div class="mod-version">v2.4.1 - Premium</div>
+            
+            <div class="mod-description">
+                <p>This premium mod enhances your Minecraft experience with exclusive features. Minecraft is the best-selling video game in history, with over 238 million copies sold. Our mod adds new dimensions to gameplay while maintaining compatibility with the original game.</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-gem"></i>
+                    <h3>New Blocks</h3>
+                    <p>Exclusive building materials</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-dragon"></i>
+                    <h3>Unique Mobs</h3>
+                    <p>Special creatures to discover</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-magic"></i>
+                    <h3>Enhanced Gameplay</h3>
+                    <p>New mechanics and features</p>
+                </div>
+            </div>
+            
+            <a href="Minecraft_2_mod.apk" download="Minecraft_2_mod" class="btn-download">
+                <i class="fas fa-download"></i> Download Now
+            </a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>This is an unofficial Minecraft mod. Not affiliated with Mojang or Microsoft.</p>
+        <p>Minecraft is a trademark of Mojang Studios</p>
+    </footer>
+</body>
+</html>

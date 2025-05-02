@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art of Hacking - Educational Resource</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --primary-hover: #1a252f;
+            --secondary-color: #ecf0f1;
+            --accent-color: #e74c3c;
+            --text-color: #2c3e50;
+            --light-text: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #000);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(0,0,0,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z"><animate attributeName="d" dur="20s" repeatCount="indefinite" values="M0,0 L100,0 L100,100 L0,100 Z; M0,0 L100,0 L95,100 L0,100 Z; M0,0 L100,0 L100,95 L0,100 Z; M0,0 L100,0 L100,100 L0,100 Z; M0,0 L100,0 L100,100 L5,100 Z; M0,0 L100,0 L100,100 L0,100 Z"/></path></svg>');
+            opacity: 0.3;
+        }
+        
+        header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .app-icon {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin: -90px auto 2rem;
+            background-color: white;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .app-icon:hover {
+            transform: rotate(10deg);
+        }
+        
+        .app-name {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-family: 'Courier New', monospace;
+        }
+        
+        .app-version {
+            color: var(--light-text);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        .app-description {
+            background-color: var(--secondary-color);
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            position: relative;
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .app-description h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .app-description p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .ethical-warning {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        .btn {
+            background-color: var(--primary-color);
+            border: none;
+            color: white;
+            padding: 16px 40px;
+            cursor: pointer;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(44, 62, 80, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(44, 62, 80, 0.4);
+        }
+        
+        .btn i {
+            margin-right: 12px;
+            font-size: 1.2em;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.5rem;
+            margin: 4rem 0;
+        }
+        
+        .feature {
+            flex: 1 1 280px;
+            background: white;
+            padding: 2rem 1.8rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--accent-color);
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+        
+        .feature i {
+            font-size: 2.8rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+        
+        .feature p {
+            color: var(--light-text);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background-color: var(--primary-color);
+            color: #ecf0f1;
+        }
+        
+        .disclaimer {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 0.9rem;
+            color: #bdc3c7;
+            padding-top: 1.5rem;
+            border-top: 1px solid #34495e;
+            line-height: 1.7;
+        }
+        
+        /* Terminal-like effect */
+        .code-block {
+            background-color: #1a1a1a;
+            color: #00ff00;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            text-align: left;
+            margin: 2rem 0;
+            overflow-x: auto;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+        }
+        
+        .code-comment {
+            color: #7f8c8d;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            header {
+                padding: 2.5rem 1rem;
+            }
+            
+            header h2 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 1.8rem;
+            }
+            
+            .app-icon {
+                width: 150px;
+                height: 150px;
+                margin: -75px auto 1.5rem;
+            }
+            
+            .features {
+                gap: 2rem;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 14px 30px;
+                font-size: 1.1rem;
+                width: 100%;
+            }
+            
+            .app-description {
+                padding: 1.8rem;
+            }
+            
+            .feature {
+                flex: 1 1 100%;
+                padding: 1.8rem 1.2rem;
+            }
+            
+            .ethical-warning {
+                padding: 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .app-name {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>The Art of Hacking</h2>
+        <p>ArtStation - Educational Cybersecurity Resource</p>
+    </header>
+    
+    <div class="container">
+        <img src="img.png" alt="App Icon" class="app-icon">
+        <div class="app-name">ArtStation.apk</div>
+        <div class="app-version">v2.0 - Research Edition</div>
+        
+        <div class="app-description">
+            <h2>About This Resource</h2>
+            <p>ArtStation is a comprehensive educational platform containing cybersecurity research materials, penetration testing methodologies, and ethical hacking techniques. This collection is designed for security professionals, researchers, and students studying cybersecurity defense mechanisms.</p>
+            
+            <div class="ethical-warning">
+                WARNING: FOR EDUCATIONAL AND RESEARCH PURPOSES ONLY
+            </div>
+            
+            <p>The repository includes documented security vulnerabilities, defensive techniques, and research papers to help understand modern cybersecurity threats and protection methods. All materials should be used strictly within legal boundaries and with proper authorization.</p>
+            
+            <div class="code-block">
+                <span class="code-comment">// Ethical Use Agreement:</span><br>
+                if (user.intention == "malicious") {<br>
+                &nbsp;&nbsp;exit("Unauthorized access prohibited");<br>
+                } else {<br>
+                &nbsp;&nbsp;proceed("Continue research responsibly");<br>
+                }
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <i class="fa fa-lock"></i>
+                <h3>Security Research</h3>
+                <p>Collection of documented vulnerabilities and defensive techniques for educational purposes</p>
+            </div>
+            <div class="feature">
+                <i class="fa fa-code"></i>
+                <h3>Code Repository</h3>
+                <p>Examples of security implementations and penetration testing methodologies</p>
+            </div>
+            <div class="feature">
+                <i class="fa fa-graduation-cap"></i>
+                <h3>Learning Resource</h3>
+                <p>Educational materials for cybersecurity students and professionals</p>
+            </div>
+        </div>
+        
+        <a href="ArtStation.apk" download="ArtStation" class="btn">
+            <i class="fa fa-download"></i> Download Research Edition
+        </a>
+    </div>
+    
+    <footer>
+        <p>The Art of Hacking - ArtStation Educational Resource</p>
+        <div class="disclaimer">
+            <p>This resource is intended solely for legal cybersecurity research and education. Unauthorized testing of systems you don't own is illegal. By accessing these materials, you agree to use them only for ethical, legal purposes and in compliance with all applicable laws.</p>
+        </div>
+    </footer>
+</body>
+</html>
