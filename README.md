@@ -34,9 +34,9 @@ This will:
 2. Download AndroVirus
 3. Set up the launcher (`androvirus` command)
 
-### Method 2: Alienkrishn Repository
+### Method 2: Alienkrishn Repository 
 
-For users of the Alienkrishn Termux Repository:
+For users of the [Alienkrishn Termux Repository](https://anon4you.github.io/alienkrishn)
 
 ```bash
 apt install androvirus
