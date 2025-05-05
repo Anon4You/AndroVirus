@@ -9,6 +9,9 @@ A powerful collection of simulated security testing tools for educational purpos
 
 ---
 
+## 📺 Demo Video
+[![AndroVirus Demo](https://img.shields.io/badge/Watch_Demo-Odysee-blue?style=for-the-badge&logo=odysee)](https://odysee.com/@alienkrishn:9/AndroVirus-demo:a?r=GD4WmMQjqCjSvVr3UbPsiggzyb3e1cgP)
+
 ## 🚀 Features
 
 - **10+ Security Testing Modules**: Includes simulated tools for various security scenarios
